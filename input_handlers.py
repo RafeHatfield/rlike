@@ -1,9 +1,7 @@
-"""Module input handlers for roguelike."""
-import tcod as libtcod
+import libtcodpy as libtcod
 
 
 def handle_keys(key):
-    """Function handling key presses for the roguelike."""
     # Movement keys
     if key.vk == libtcod.KEY_UP:
         return {'move': (0, -1)}
@@ -17,7 +15,6 @@ def handle_keys(key):
     if key.vk == libtcod.KEY_ENTER and key.lalt:
         # Alt+Enter: toggle full screen
         return {'fullscreen': True}
-
     elif key.vk == libtcod.KEY_ESCAPE:
         # Exit the game
         return {'exit': True}
