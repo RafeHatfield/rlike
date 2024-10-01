@@ -29,9 +29,9 @@ def main():
     }
 
     player = Entity(int(screen_width / 2), int(screen_height / 2), '@', libtcod.white)
-    # npc = Entity(int(screen_width / 2 - 5), int(screen_height / 2), '@', libtcod.yellow)
-    # entities = [npc, player]
-    entities = [player]
+    npc = Entity(int(screen_width / 2 - 5), int(screen_height / 2), '@', libtcod.yellow)
+    entities = [npc, player]
+    # entities = [player]
 
     libtcod.console_set_custom_font('arial10x10.png', libtcod.FONT_TYPE_GREYSCALE | libtcod.FONT_LAYOUT_TCOD)
 
@@ -60,7 +60,7 @@ def main():
         render_all(con, entities, game_map, fov_map, fov_recompute, screen_width, screen_height, colors)
 
         fov_recompute = False
-        
+
         libtcod.console_flush()
 
         clear_all(con, entities)
